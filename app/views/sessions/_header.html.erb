@@ -1,14 +1,14 @@
 <div class="header">
   <%if current_user == nil%>
     <div class="create_account">
-      <%=link_to "Create Account", new_users_path%>
+      <%=link_to "Create Account", new_user_path%>
     </div>
     <div class="login">
-      <%=link_to "Login", new_sessions_path%>
+      <%=link_to "Login", new_session_path%>
     </div>
   <%else%>
       <div class="profile">
-        <%= link_to current_user.username, users_path%>
+        <%= link_to current_user.username, user_path(current_user.id)%>
       </div>
       <div class="logout">
         <%= link_to "Logout", log_out_path, method: :delete%>
