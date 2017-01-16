@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       redirect_to action: "new"
+      flash[:notice] = "Failed to create new account, please try again."
     end
   end
 
