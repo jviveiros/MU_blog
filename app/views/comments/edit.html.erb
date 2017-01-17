@@ -1,0 +1,6 @@
+<%= form_for [@article, @comment] do |f|%>
+  <%= f.label "Comment"%>:
+  <%= f.text_area :body, value: @comment.body%></br>
+
+  <%= f.submit "Update Comment"%>
+<%end%>
