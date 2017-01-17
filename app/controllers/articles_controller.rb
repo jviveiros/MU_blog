@@ -14,9 +14,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.users_id = current_user.id
+    @article.user_id = current_user.id
       if @article.save
-        redirect_to article_url
+        redirect_to article_url(@article)
       else
         redirect_to "articles#new"
       end
@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :user_id)
   end
 
 end

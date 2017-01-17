@@ -18,20 +18,20 @@ ActiveRecord::Schema.define(version: 20170115214453) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_articles_on_users_id", using: :btree
+    t.index ["user_id"], name: "index_articles_on_user_id", using: :btree
   end
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
-    t.integer  "users_id"
-    t.integer  "articles_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["articles_id"], name: "index_comments_on_articles_id", using: :btree
-    t.index ["users_id"], name: "index_comments_on_users_id", using: :btree
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_comments_on_article_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

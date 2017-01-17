@@ -6,6 +6,9 @@
     <div class="login">
       <%=link_to "Login", new_session_path%>
     </div>
+    <div class="home">
+      <%=link_to "Home", root_path%>
+    </div>
   <%else%>
       <div class="profile">
         <%= link_to current_user.username, user_path(current_user.id)%>
@@ -13,5 +16,8 @@
       <div class="logout">
         <%= link_to "Logout", log_out_path, method: :delete%>
       </div>
+      <div class="home">
+        <%=link_to "Home", root_path%>
+      </div> 
   <%end%>
 </div>

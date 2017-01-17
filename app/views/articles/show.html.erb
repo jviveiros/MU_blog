@@ -1,6 +1,14 @@
 
-  <h1><%=@article.title%></h1></br></br>
-  <p><%=@article.body%></br>
+  <div class="title">
+    <h1><%=@article.title%></h1></br></br>
+  </div>
+  <div class="body">
+    <p><%=@article.body%></p></br>
+  </div>
+  <div class="author">
+    <p> - <%=@article.user.username%></p></br>
+  </div>
 
 
+  <%= link_to "Add Comment", new_article_comment_path(@article)%> 
   <%=link_to "Delete", article_path(@article), method: :delete%>
