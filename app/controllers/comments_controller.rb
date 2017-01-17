@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       if @comment.save
         redirect_to article_path(@article)
       else
-        redirect_to new_article_comment_path
+        render action:"new"
       end
   end
 

@@ -11,8 +11,7 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to root_path
     else
-      redirect_to action: "new"
-      flash[:notice] = "Failed to create new account, please try again."
+      render action: "new"
     end
   end
 

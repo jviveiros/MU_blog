@@ -19,8 +19,21 @@ class ArticlesController < ApplicationController
       if @article.save
         redirect_to article_url(@article)
       else
-        redirect_to "articles#new"
+        render action: "new"
       end
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update_attributes(article_params)
+      redirect_to article_path(@article)
+    else
+      render action: "edit"
+    end
   end
 
   def destroy

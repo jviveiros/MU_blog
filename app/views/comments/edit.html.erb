@@ -1,3 +1,6 @@
+<%= @comment.errors.full_messages.first if @comment.errors.any? %></br></br>
+
+
 <%= form_for [@article, @comment] do |f|%>
   <%= f.label "Comment"%>:
   <%= f.text_area :body, value: @comment.body%></br>

@@ -1,0 +1,12 @@
+<%= @article.errors.full_messages.first if @article.errors.any? %></br></br>
+
+
+<%= form_for @article do |f|%>
+  <%=f.label :title%>:
+  <%=f.text_field :title, value: @article.title%></br>
+
+  <%= f.label :body%>:
+  <%= f.text_area :body, value: @article.body%></br>
+
+  <%= f.submit "Update Article"%>
+<%end%>
