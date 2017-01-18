@@ -21,6 +21,12 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+#use Figaro for setting .env variables that are hidden.
+gem 'figaro'
+
+#use HTTPparty to query the API server
+gem 'httparty'
+
 #User Sorcery for user authentication/authorization
 gem 'sorcery'
 
