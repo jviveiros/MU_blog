@@ -1,6 +1,7 @@
 <h1> Welcome to the Multi-User Blog! </h1>
-
-<%= link_to "Post Article", new_article_path%>
+<%if current_user%>
+  <%= link_to "Post Article", new_article_path%>
+<%end%>
 <ul>
 <% @articles.each do |article|%>
 <li><%=link_to article.title, article_path(article)%></li>
