@@ -24,10 +24,10 @@
         <% if current_user == comment.user%>
           <%= link_to "Edit", edit_article_comment_path(comment.article, comment), class:"btn btn-warning btn-xs edit"%>
           <%= link_to 'Delete', [comment.article, comment], method: :delete, class:"btn btn-danger btn-xs delete" %>
+          <%end%>
         </div>
         </div>
       </div>
       </br>
       </br>
-        <%end%>
     <%end%>
