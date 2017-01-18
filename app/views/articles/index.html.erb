@@ -1,11 +1,17 @@
-<h1> Welcome to the Bootcamp Blog! </h1>
-<h3>Discuss all things coding bootcamp related</h3></br>
-<%if current_user%>
+<div class="jumbotron">
+  <h1> Welcome to the Bootcamp Blog! </h1>
+  <h3>Discuss all things coding bootcamp related</h3></br>
+  <%if current_user%>
   <%= link_to "Post Article", new_article_path, class: "btn btn-primary"%>
-<%end%>
-<ul>
-<% @articles.each do |article|%>
-<li><%=link_to article.title, article_path(article)%></li>
-</br>
-<%end%>
-</ul>
+  <%end%>
+</div>
+<div class="row">
+  <div class="col-md-2 col-md-offset-5">
+    <ul>
+      <% @articles.each do |article|%>
+        <li><%=link_to article.title, article_path(article)%></li>
+        </br>
+      <%end%>
+    </ul>
+  </div>
+</div>

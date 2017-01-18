@@ -18,5 +18,5 @@
 </br>
 </br>
 <%if current_user = @user%>
-  <h4><%=link_to "Delete Account", user_path(@user), method: :delete%>
+  <h4><%=link_to "Delete Account", user_path(@user), method: :delete, class: "btn btn-danger"%>
 <%end%>
