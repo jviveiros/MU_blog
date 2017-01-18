@@ -8,11 +8,11 @@ The purpose of this app was to build a multi-user blog dedicated to those who ha
 
 
 **Future Development - timeline TBD:**
-*Biography for users
-*Competencies/Tags
-*Profile Images/Avatars
-*Email notifications on sign-up.
-*Ability to follow users
+* Biography for users
+* Competencies/Tags
+* Profile Images/Avatars
+* Email notifications on sign-up.
+* Ability to follow users
 
 
 
