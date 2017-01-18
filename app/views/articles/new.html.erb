@@ -1,10 +1,24 @@
 <%= @article.errors.full_messages.first if @article.errors.any? %></br></br>
 
-<%=form_for @article do |f|%>
-  <%=f.label :title%>:
-  <%=f.text_field :title%></br></br>
-
-  <%=f.label :body%>:
-  <%=f.text_area :body%></br></br>
-  <%=f.submit "Post Article"%>
+<%=form_for @article, class:"form-horizontal" do |f|%>
+  <fieldset>
+    <legend>Post An Article</legend>
+    <div class="form-group">
+      <%=f.label :title, class:"col-lg-2 control-label"%>
+      <div class="col-lg-9">
+        <%=f.text_field :title, class:"form-control"%>
+      </div>
+    </div></br></br>
+    <div class="form-group">
+      <%=f.label :body, class:"col-lg-2 control-label"%>
+      <div class="col-lg-9">
+        <%=f.text_area :body, class:"form-control"%>
+      </div>
+    </div></br></br></br>
+    <div class="form-group">
+      <div class="col-lg-8 col-lg-offset-2">
+        <%=f.submit "Post Article", class:"btn btn-primary"%>
+      </div>
+    </div>
+  </fieldset>
 <%end%>

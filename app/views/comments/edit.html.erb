@@ -1,9 +1,19 @@
 <%= @comment.errors.full_messages.first if @comment.errors.any? %></br></br>
 
 
-<%= form_for [@article, @comment] do |f|%>
-  <%= f.label "Comment"%>:
-  <%= f.text_area :body, value: @comment.body%></br>
-
-  <%= f.submit "Update Comment"%>
+<%= form_for [@article, @comment], class:"form-horizontal" do |f|%>
+  <fieldset>
+    <legened>Edit Comment</legend>
+      <div class="form-group">
+        <%= f.label "Comment", class:"col-lg-2 control-label"%>
+        <div class="col-lg-9">
+          <%= f.text_area :body, value: @comment.body, class:"form-control"%></br>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <%= f.submit "Update Comment", class: "btn btn-primary"%>
+        </div>
+      </div>
+  </fieldset>
 <%end%>
