@@ -1,6 +1,7 @@
-<h1> Welcome to the Multi-User Blog! </h1>
+<h1> Welcome to the Bootcamp Blog! </h1>
+<h3>Discuss all things coding bootcamp related</h3></br>
 <%if current_user%>
-  <%= link_to "Post Article", new_article_path%>
+  <%= link_to "Post Article", new_article_path, class: "btn btn-primary"%>
 <%end%>
 <ul>
 <% @articles.each do |article|%>

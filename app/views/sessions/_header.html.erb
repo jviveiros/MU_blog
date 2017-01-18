@@ -1,23 +1,21 @@
-<div class="header">
-  <%if current_user == nil%>
-    <div class="create_account">
-      <%=link_to "Create Account", new_user_path%>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Bootcamp Blog</a>
+      <%if current_user == nil%>
+        <ul class = "nav navbar-nav navbar-right">
+          <li><%=link_to "Create Account", new_user_path%></li>
+          <li><%=link_to "Login", new_session_path%></li>
+          <li><%=link_to "Home", root_path%></li>
+        </ul>
+      <%else%>
+        <ul class = "nav navbar-nav navbar-right">
+          <li><%= link_to current_user.username, user_path(current_user.id)%></li>
+          <li><%=link_to "Home", root_path%></li>
+          <li><%= link_to "Logout", log_out_path, method: :delete%></li>
+        </ul>
+      <%end%>
     </div>
-    <div class="login">
-      <%=link_to "Login", new_session_path%>
-    </div>
-    <div class="home">
-      <%=link_to "Home", root_path%>
-    </div>
-  <%else%>
-      <div class="profile">
-        <%= link_to current_user.username, user_path(current_user.id)%>
-      </div>
-      <div class="logout">
-        <%= link_to "Logout", log_out_path, method: :delete%>
-      </div>
-      <div class="home">
-        <%=link_to "Home", root_path%>
-      </div> 
-  <%end%>
-</div>
+  </div>
+</nav>
