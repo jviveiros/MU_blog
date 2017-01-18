@@ -1,0 +1,22 @@
+<h1>Hi, <%=@user.username%><h1>
+</br>
+</br>
+<h3>Your Articles:</h3>
+  <ul>
+    <%@articles.each do |article|%>
+      <li><%=link_to article.title, article_path(article)%></li>
+    <%end%>
+  </ul>
+</br>
+<h3>Your Comments:</h3>
+  <ul>
+    <%@comments.each do |comment|%>
+      <li><%=link_to comment.body, article_path(comment.article)%></li>
+    <%end%>
+  </ul>
+</br>
+</br>
+</br>
+<%if current_user = @user%>
+  <h4><%=link_to "Delete Account", user_path(@user), method: :delete, class: "btn btn-danger"%>
+<%end%>
