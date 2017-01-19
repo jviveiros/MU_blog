@@ -3,6 +3,11 @@ class CommentsController < ApplicationController
   def new
     @article = Article.find(params[:article_id])
     @comment = @article.comments.new
+    respond_to do |format|
+      format.js{}
+      format.html{}
+    end
+
   end
 
   def create

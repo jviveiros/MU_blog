@@ -1,5 +1,19 @@
+
+
+
+
+
 <div class="jumbotron">
   <h1>Hi, <%=@user.username%><h1>
+
+    <div class="card" style="width: 20rem;">
+      <canvas id="icon1" width="128" height="128"></canvas>
+      <div class="card-block">
+        <h4 class="card-title">Current Weather</h4>
+        <p class="card-text"><%=@weather.now%></p>
+        <cite><a id="darksky" href="https://darksky.net/poweredby/">Powered by DarkSky</a></cite>
+      </div>
+    </div>
 </div>
 </br>
 </br>
@@ -40,3 +54,11 @@
     <h4><%=link_to "Delete Account", user_path(@user), method: :delete, class: "btn btn-danger actdelete"%>
   <%end%>
 </div>
+
+
+<script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+<script>
+  var skycons = new Skycons({"color": "black"});
+  skycons.add(document.getElementById("icon1"), Skycons.<%=@weather.now_icon%>);
+  skycons.play();
+</script>
