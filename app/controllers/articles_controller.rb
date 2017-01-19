@@ -11,16 +11,24 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    respond_to do |format|
+      format.js{}
+      format.html{}
+    end
   end
 
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
+    respond_to do |format|
       if @article.save
-        redirect_to article_url(@article)
+        format.html{redirect_to article_url(@article)}
+        format.js{}
       else
-        render action: "new"
+        format.html{render action: "new"}
+        format.js{redirect_to root_path}
       end
+    end
   end
 
   def edit

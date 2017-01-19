@@ -2,17 +2,22 @@
   <h1> Welcome to the Bootcamp Blog! </h1>
   <h3>Discuss all things coding bootcamp related</h3></br>
   <%if current_user%>
-  <%= link_to "Post Article", new_article_path, class: "btn btn-primary"%>
+  <%= link_to "Post Article", new_article_path, remote:true, class: "btn btn-primary"%>
   <%end%>
 </div>
+<div class ="newarticle">
+</div>
+
 <div class="row">
   <div class="col-md-2 col-md-offset-5">
     <h4 id="articles">Articles</h4>
+    <div class="articles">
     <ul class="list-group">
       <% @articles.each do |article|%>
         <li class="list-group-item"><%=link_to article.title, article_path(article)%></li>
         </br>
       <%end%>
     </ul>
+    </div>
   </div>
 </div>
