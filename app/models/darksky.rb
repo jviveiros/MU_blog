@@ -23,6 +23,8 @@ class Darksky
 
   def now_icon
     @now_icon = @json['minutely']['icon']
+    @now_icon.gsub!("-", "_")
+    @now_icon.upcase!
   end
 
   def hourly_data
