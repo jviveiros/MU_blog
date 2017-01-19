@@ -19,6 +19,12 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @articles = @user.articles
     @comments = @user.comments
+
+    #Weather API Commands
+    @weather = Darksky.new
+
+
+
   end
 
   def destroy
