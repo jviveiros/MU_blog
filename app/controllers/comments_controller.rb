@@ -14,11 +14,16 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.new(comment_params)
     @comment.user_id = current_user.id
+
+    respond_to do |format|
       if @comment.save
-        redirect_to article_path(@article)
+        format.html{redirect_to article_path(@article)}
+        format.js{}
       else
-        render action:"new"
+        format.html{render action: "new"}
+        format.js{redirect_to article_path(@article)}
       end
+    end
   end
 
   def edit
