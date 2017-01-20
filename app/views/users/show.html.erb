@@ -4,8 +4,11 @@
 
 
 <div class="jumbotron">
-  <h1>Hi, <%=@user.username%><h1>
-
+  <%if current_user == @user%>
+    <h1>Hi, <%=@user.username%><h1>
+  <%else%>
+    <h1><%=@user.username%></h1>
+  <%end%>
     <div class="card" style="width: 20rem;">
       <canvas id="icon1" width="128" height="128"></canvas>
       <div class="card-block">
