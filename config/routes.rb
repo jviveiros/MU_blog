@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
 
-  resources :users do
-    resources :articles
+  resources :users, only: [:new, :show, :create, :destroy] do
   end
   resources :articles, only: [:new, :index, :create, :show, :edit, :destroy, :update] do
-    resources :comments, only: [:new, :create, :edit, :destroy]
+    resources :comments, only: [:new, :create, :update, :edit, :destroy]
   end
 
   resources :sessions, only: [:new, :create, :destroy]
