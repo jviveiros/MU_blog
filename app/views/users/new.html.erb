@@ -1,17 +1,36 @@
 <%= @user.errors.full_messages.first if @user.errors.any? %></br></br>
 
-<%=form_for @user do |f|%>
-  <%=f.label :username %>:
-  <%=f.text_field :username %></br>
-
-  <%=f.label :email %>:
-  <%=f.text_field :email%></br>
-
-  <%=f.label :password %>:
-  <%=f.password_field :password%></br>
-
-  <%=f.label :password_confirmation%>:
-  <%=f.password_field :password_confirmation%></br>
-
-  <%=f.submit "Create My Account"%>
+<%=form_for @user, class:"form-horizontal" do |f|%>
+  <fieldset>
+    <legend> Sign Up </legend>
+    <div class="form-group">
+      <%=f.label :username, class:"col-lg-2 control-label" %>
+      <div class="col-lg-8">
+        <%=f.text_field :username, class:"form-control", id:"inputUsername" %>
+      </div>
+    </div></br></br>
+    <div class="form-group">
+      <%=f.label :email, class:"col-lg-2 control-label" %>
+      <div class="col-lg-8">
+        <%=f.text_field :email, class:"form-control", id:"inputEmail"%>
+      </div>
+    </div></br></br>
+    <div class="form-group">
+      <%=f.label :password, class:"col-lg-2 control-label" %>
+      <div class="col-lg-8">
+        <%=f.password_field :password, class:"form-control", id:"inputPassword"%>
+      </div>
+    </div></br></br>
+    <div class="form-group">
+      <%=f.label :password_confirmation, class:"col-lg-2 control-label"%>
+      <div class="col-lg-8">
+        <%=f.password_field :password_confirmation, class:"form-control", id:"reinputPassword"%>
+      </div>
+    </div></br></br>
+    <div class="form-group">
+      <div class="col-lg-8 col-lg-offset-2">
+        <%=f.submit "Create My Account", class:"btn btn-primary"%>
+      </div>
+    <div>
+  </fieldset>
 <%end%>
